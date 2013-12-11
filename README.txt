@@ -1,1 +1,0 @@
-This is a simple downloader for aIW3 as their service is too unreliable. You may download encrypted files such as GameRT.dat(aCI2.dll) and NetRT.#.
