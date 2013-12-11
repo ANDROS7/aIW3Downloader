@@ -47,6 +47,11 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ShowProgress>NotSet</ShowProgress>
+      <Version>
+      </Version>
+      <SubSystem>Console</SubSystem>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -64,6 +69,59 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="README.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\Crypto.h" />
+    <ClInclude Include="Include\libtomcrypt\tomcrypt.h" />
+    <ClInclude Include="Include\libtomcrypt\tomcrypt_argchk.h" />
+    <ClInclude Include="Include\libtomcrypt\tomcrypt_cfg.h" />
+    <ClInclude Include="Include\libtomcrypt\tomcrypt_cipher.h" />
+    <ClInclude Include="Include\libtomcrypt\tomcrypt_custom.h" />
+    <ClInclude Include="Include\libtomcrypt\tomcrypt_hash.h" />
+    <ClInclude Include="Include\libtomcrypt\tomcrypt_mac.h" />
+    <ClInclude Include="Include\libtomcrypt\tomcrypt_macros.h" />
+    <ClInclude Include="Include\libtomcrypt\tomcrypt_math.h" />
+    <ClInclude Include="Include\libtomcrypt\tomcrypt_misc.h" />
+    <ClInclude Include="Include\libtomcrypt\tomcrypt_pk.h" />
+    <ClInclude Include="Include\libtomcrypt\tomcrypt_pkcs.h" />
+    <ClInclude Include="Include\libtomcrypt\tomcrypt_prng.h" />
+    <ClInclude Include="Include\np\Friends.h" />
+    <ClInclude Include="Include\np\libnp.h" />
+    <ClInclude Include="Include\np\NPAsync.h" />
+    <ClInclude Include="Include\np\NPAuthenticate.h" />
+    <ClInclude Include="Include\np\NPFriends.h" />
+    <ClInclude Include="Include\np\NPLists.h" />
+    <ClInclude Include="Include\np\NPServers.h" />
+    <ClInclude Include="Include\np\NPStorage.h" />
+    <ClInclude Include="Include\np\NPTypeDefs.h" />
+    <ClInclude Include="Include\tomlibcrypt\tomcrypt.h" />
+    <ClInclude Include="Include\tomlibcrypt\tomcrypt_argchk.h" />
+    <ClInclude Include="Include\tomlibcrypt\tomcrypt_cfg.h" />
+    <ClInclude Include="Include\tomlibcrypt\tomcrypt_cipher.h" />
+    <ClInclude Include="Include\tomlibcrypt\tomcrypt_custom.h" />
+    <ClInclude Include="Include\tomlibcrypt\tomcrypt_hash.h" />
+    <ClInclude Include="Include\tomlibcrypt\tomcrypt_mac.h" />
+    <ClInclude Include="Include\tomlibcrypt\tomcrypt_macros.h" />
+    <ClInclude Include="Include\tomlibcrypt\tomcrypt_math.h" />
+    <ClInclude Include="Include\tomlibcrypt\tomcrypt_misc.h" />
+    <ClInclude Include="Include\tomlibcrypt\tomcrypt_pk.h" />
+    <ClInclude Include="Include\tomlibcrypt\tomcrypt_pkcs.h" />
+    <ClInclude Include="Include\tomlibcrypt\tomcrypt_prng.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Crypto.cpp" />
+    <ClCompile Include="Source\Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Dependencies\libnp.lib" />
+    <Library Include="Dependencies\tomcrypt.lib" />
+    <Library Include="Dependencies\tommath.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Dependencies\libnp.dll">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
