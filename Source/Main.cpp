@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
 		OutputFile.write((const char *)OutBuffer, Res->fileSize - sizeof(np_header));
 	}
 	else
-		OutputFile.write((const char *)Res->buffer, Res->fileSize - sizeof(np_header));
+		OutputFile.write((const char *)Res->buffer, Res->fileSize);
 
 	std::cout << "Writing file: " << argv[1] << ".\n";
 	OutputFile.close();
