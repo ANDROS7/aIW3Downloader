@@ -61,7 +61,9 @@ int main(int argc, char *argv[])
 		break;
 	}
 
+	std::ofstream OutputFile(argv[1], std::ios::binary);
 	unsigned char *OutBuffer;
+
 	if (IsEncrypted(Res))
 	{
 		std::cout << "The file is encrypted and needs to be decrypted, this will only take a second.\n";
@@ -72,14 +74,12 @@ int main(int argc, char *argv[])
 			std::cout << "Something went very wrong while decrypting, please try again.\n";
 			return 0;
 		}
+		OutputFile.write((const char *)OutBuffer, Res->fileSize - sizeof(np_header));
 	}
 	else
-		OutBuffer = Res->buffer;
+		OutputFile.write((const char *)Res->buffer, Res->fileSize - sizeof(np_header));
 
-	// Keep the environment in mind.
 	std::cout << "Writing file: " << argv[1] << ".\n";
-	std::ofstream OutputFile(argv[1], std::ios::binary);
-	OutputFile.write((const char *)OutBuffer, Res->fileSize - sizeof(np_header));
 	OutputFile.close();
 
 
